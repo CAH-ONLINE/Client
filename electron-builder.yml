@@ -1,6 +1,6 @@
-appId: com.example.nextron
-productName: My Nextron App
-copyright: Copyright © 2018 Yoshihide Shiono
+appId: gay.ozzy.cah
+productName: Cards Against Humanity
+copyright: Copyright © 2022 Jason Diaz Jimenez
 directories:
   output: dist
   buildResources: resources
