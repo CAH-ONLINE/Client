@@ -1,11 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../styles/Home.module.scss";
+import styles from "../styles/Session.module.scss";
 import Store from "electron-store";
 import Router from "next/router";
 import Navbar from "../components/Navbar/Navbar";
 import Container from "../components/Layout/Container";
+import SessionCard from "../components/Sessions/SessionCard";
 ("electron-store");
 
 function Home() {
@@ -28,9 +29,13 @@ function Home() {
       </Head>
       <Container>
         <Navbar />
-        <div className={styles.home}>
-          <h1>Cards Against Humanity</h1>
-          <h2>Sessions</h2>
+        <h2>Sessions</h2>
+        <div className={styles.sessions}>
+          <SessionCard />
+          <SessionCard />
+          <SessionCard />
+          <SessionCard />
+          <SessionCard />
         </div>
       </Container>
     </React.Fragment>

@@ -1,19 +1,39 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #fff;
-    background-color: #000;
-    overflow-y: hidden;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #000;
+  overflow-y: hidden;
 }
 
 .container {
-    width: 950px;
+  max-width: 1536px;
+  width: 100%;
+  margin: 0 auto;
+  @media only screen and (max-width: 1280px) {
+    max-width: 1024px;
+    width: 100%;
     margin: 0 auto;
+  }
+  @media only screen and (max-width: 1024px) {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  @media only screen and (max-width: 640px) {
+    width: 100vw;
+    h1 {
+      font-size: 32px !important;
+    }
+    p {
+      font-size: 16px !important;
+    }
+  }
 }

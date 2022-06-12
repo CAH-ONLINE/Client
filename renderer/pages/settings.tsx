@@ -27,7 +27,7 @@ function Home() {
         <title>Cards Against Humanity - Settings</title>
       </Head>
       <Container>
-        <Navbar />>
+        <Navbar />
         <h1>Settings</h1>
       </Container>
     </React.Fragment>
