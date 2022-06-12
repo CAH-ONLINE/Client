@@ -1,11 +1,16 @@
+import { spawn } from "child_process";
 import {
   screen,
   BrowserWindow,
-} from 'electron';
-import Store from 'electron-store';
+  BrowserWindowConstructorOptions,
+} from "electron";
+import Store from "electron-store";
 
-export default function createWindow(windowName, options) {
-  const key = 'window-state';
+export default (
+  windowName: string,
+  options: BrowserWindowConstructorOptions
+): BrowserWindow => {
+  const key = "window-state";
   const name = `window-state-${windowName}`;
   const store = new Store({ name });
   const defaultSize = {
@@ -41,13 +46,13 @@ export default function createWindow(windowName, options) {
     const bounds = screen.getPrimaryDisplay().bounds;
     return Object.assign({}, defaultSize, {
       x: (bounds.width - defaultSize.width) / 2,
-      y: (bounds.height - defaultSize.height) / 2
+      y: (bounds.height - defaultSize.height) / 2,
     });
   };
 
   const ensureVisibleOnSomeDisplay = (windowState) => {
-    const visible = screen.getAllDisplays().some(display => {
-      return windowWithinBounds(windowState, display.bounds)
+    const visible = screen.getAllDisplays().some((display) => {
+      return windowWithinBounds(windowState, display.bounds);
     });
     if (!visible) {
       // Window is partially or fully not visible now.
@@ -66,17 +71,36 @@ export default function createWindow(windowName, options) {
 
   state = ensureVisibleOnSomeDisplay(restore());
 
-  win = new BrowserWindow({
+  const browserOptions: BrowserWindowConstructorOptions = {
     ...options,
     ...state,
+    show: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
       ...options.webPreferences,
     },
-  });
+  };
+  win = new BrowserWindow(browserOptions);
 
-  win.on('close', saveState);
+  const splash = new BrowserWindow({
+    width: 500,
+    height: 300,
+    transparent: true,
+    frame: false,
+    alwaysOnTop: true,
+  });
+  splash.loadFile(`splash.html`);
+  splash.show()
+  splash.center()
+  
+  setTimeout(function () {
+    splash.close();
+    win.show();
+    win.center()
+  }, 5000);
+
+  win.on("close", saveState);
 
   return win;
 };
