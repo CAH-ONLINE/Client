@@ -10,13 +10,13 @@ export default function Navbar() {
       <div className={styles.items}>
         <ul className={styles.list}>
           <li>
-            <Link href="sessions">Sessions</Link>
+            <Link href="/sessions">Sessions</Link>
           </li>
           <li>
-            <Link href="settings">Settings</Link>
+            <Link href="/settings">Settings</Link>
           </li>
           <li>
-            <Link href="create">Create</Link>
+            <Link href="/create">Create</Link>
           </li>
         </ul>
         <button>{nickname}</button>

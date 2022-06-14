@@ -1,6 +1,15 @@
 import styles from "./SessionCard.module.scss";
+import type { SessionCard } from "../../utils/types";
+import Link from "next/link";
 
-export default function SessionCard() {
+export default function SessionCard({
+  decksID,
+  id,
+  nsfw,
+  playerCount,
+  playerLimit,
+  status,
+}: SessionCard) {
   return (
     <div className={styles.sessionCard}>
       <div className={styles.cah}>
@@ -10,11 +19,15 @@ export default function SessionCard() {
       </div>
       <div>
         <h2>Stats</h2>
-        <p>Players: ()</p>
-        <p>Status: ()</p>
-        <p>()</p>
+        <p>
+          Players: {playerCount}/{playerLimit}
+        </p>
+        <p>Status: {status}</p>
+        <p>{nsfw ? "NOT SAFE FOR KIDS" : "SAFE FOR KIDS"}</p>
       </div>
-      <button>JOIN </button>
+      <Link href="/game/2342">
+        <button>JOIN GAME</button>
+      </Link>
     </div>
   );
 }

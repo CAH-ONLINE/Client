@@ -6,6 +6,7 @@ import Store from "electron-store";
 import Router from "next/router";
 import Navbar from "../components/Navbar/Navbar";
 import Container from "../components/Layout/Container";
+import { dummySessions } from "../data/dummy";
 import SessionCard from "../components/Sessions/SessionCard";
 ("electron-store");
 
@@ -30,13 +31,17 @@ function Home() {
       <Container>
         <Navbar />
         <h2>Sessions</h2>
-        <div className={styles.sessions}>
-          <SessionCard />
-          <SessionCard />
-          <SessionCard />
-          <SessionCard />
-          <SessionCard />
-        </div>
+        <div className={styles.sessions}>{dummySessions.map(c => (
+          <SessionCard
+            key={c.id}
+            decksID={c.decksID}
+            id={c.id}
+            nsfw={c.nsfw}
+            playerCount={c.playerCount}
+            playerLimit={c.playerLimit}
+            status={c.status.toUpperCase() as any}
+          />
+        ))}</div>
       </Container>
     </React.Fragment>
   );

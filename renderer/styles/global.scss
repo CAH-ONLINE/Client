@@ -10,7 +10,7 @@ body {
   line-height: 1.5;
   color: #fff;
   background-color: #000;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 .container {
@@ -36,4 +36,23 @@ body {
       font-size: 16px !important;
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #383838;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(41, 41, 41);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 0, 0);
 }

@@ -1,0 +1,63 @@
+.creation {
+  text-align: left;
+  font-size: 2em;
+  padding: 50px 10px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0 auto;
+    div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+      padding: 25px 0;
+      width: 100%;
+      label {
+        text-align: left;
+      }
+      input {
+        margin-top: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+        color: white;
+        background-color: transparent;
+        border: white 3px solid;
+        font-size: 1em;
+        border-radius: 20px;
+      }
+      select {
+        margin-top: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+        color: white;
+        background-color: transparent;
+        background-color: black;
+        border: white 3px solid;
+        font-size: 1em;
+        border-radius: 20px;
+      }
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      font-size: 1em;
+      font-weight: 600;
+      color: white;
+      background-color: transparent;
+      border: white 3px solid;
+      border-radius: 20px;
+      margin: 25px 0;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
