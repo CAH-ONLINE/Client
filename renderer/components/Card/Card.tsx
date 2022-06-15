@@ -7,12 +7,14 @@ type Props = {
 };
 
 export default function Card({ content, color }: Props) {
-  const style = {
+  const [clicked, setClicked] = React.useState(false);
+  const style: React.CSSProperties = {
     background: `${color}`,
+    border: `10px solid ${clicked ? "blue" : "white"}`,
     color: `${color === "black" ? "white" : "black"}`,
   };
   return (
-    <div style={style} className={styles.card}>
+    <div style={style} className={styles.card} onClick={() => setClicked(!clicked)}>
       <div>
         <h2>{content}</h2>
       </div>

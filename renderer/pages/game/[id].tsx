@@ -34,7 +34,6 @@ export default function Game() {
       <div>
         <Container>
           <div className={styles.game}>
-            <h2>Round #1</h2>
             <div className={styles.gameBoard}>
               <div className={styles.questionCard}>
                 <Card
@@ -46,15 +45,6 @@ export default function Game() {
                 <Card
                   color="white"
                   content="Surdeg nevered admit being the Scrapped Ender Dragon"
-                />
-                <Card
-                  color="white"
-                  content="Recording Koshie being cute for 10 minutes"
-                />
-                <Card color="white" content="Mr Beast" />
-                <Card
-                  color="white"
-                  content="Recording Koshie being cute for 10 minutes"
                 />
                 <Card color="white" content="Mr Beast" />
                 <Card
@@ -71,7 +61,27 @@ export default function Game() {
               </div>
             </div>
           </div>
-          <section className={styles.hand}></section>
+          <section className={styles.hand}>
+            <div className={styles.cardList}>
+              <Card
+                color="white"
+                content="Surdeg nevered admit being the Scrapped Ender Dragon"
+              />
+              <Card color="white" content="Mr Beast" />
+              <Card
+                color="white"
+                content="Recording Koshie being cute for 10 minutes"
+              />
+              <Card color="white" content="Mr Beast" />
+              <Card
+                color="white"
+                content="Recording Koshie being cute for 10 minutes"
+              />
+              <Card color="white" content="Mr Beast" />
+              {/* TODO */}
+            </div>
+            <button>✔️</button>
+          </section>
         </Container>
       </div>
     );

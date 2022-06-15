@@ -15,10 +15,10 @@
         font-weight: bold;
     }
     &:hover {
-        transform: translateY(-1rem);
+        transform: translateY(-1rem) !important;
     }
     &:hover~.card {
-        transform: translateX(130px);
+        transform: translateX(130px) !important;
     }
     &:not(:first-child) {
         margin-left: -130px;
