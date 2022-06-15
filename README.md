@@ -24,4 +24,7 @@ yarn dev
 ## Contributing
 Your Contributions are really appreciated. Feel free to fork the project and make a pull request. It can be comments, something that makes improvements, add something new. 
 
+## Notable Credits
 
+- [Fireship's Card Trick Video](https://www.youtube.com/watch?v=29deL9MFfWc)
+- [Nextron](https://github.com/saltyshiomix/nextron)

@@ -1,0 +1,26 @@
+.card {
+    position: relative;
+    width: 265px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 5px solid #ccc;
+    padding: 1.5rem;
+    box-shadow: -1rem 0rem 3rem rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    h3 {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    &:hover {
+        transform: translateY(-1rem);
+    }
+    &:hover~.card {
+        transform: translateX(130px);
+    }
+    &:not(:first-child) {
+        margin-left: -130px;
+    }
+}

@@ -39,7 +39,7 @@ function Home() {
               />
             </div>
             <div>
-              <label>Invite Code: </label>
+              <label>Invite Code (Opt.): </label>
               <input
                 value={invite}
                 onChange={(e) => setInvite(e.currentTarget.value)}
