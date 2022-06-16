@@ -1,9 +1,9 @@
-import { useRouter } from "next/router";
 import React, { useState } from "react";
-import Card from "../../components/Card/Card";
-import Container from "../../components/Layout/Container";
-import Navbar from "../../components/Navbar/Navbar";
-import styles from "../../styles/Game.module.scss";
+import { useRouter } from "next/router";
+import Card from "@/components/Card/Card";
+import Container from "@/components/Layout/Container";
+import Navbar from "@/components/Navbar/Navbar";
+import styles from "@/styles/Game.module.scss";
 
 export default function Game() {
   const router = useRouter();

@@ -1,11 +1,11 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../styles/Creation.module.scss";
+import styles from "@/styles/Creation.module.scss";
 import Store from "electron-store";
 import Router from "next/router";
-import Container from "../components/Layout/Container";
-import Navbar from "../components/Navbar/Navbar";
+import Container from "@/components/Layout/Container";
+import Navbar from "@/components/Navbar/Navbar";
 import { randomUUID } from "crypto";
 ("electron-store");
 
@@ -13,7 +13,7 @@ function Home() {
   const store = new Store();
   const [status, setStatus] = React.useState<"Public" | "Private">("Public");
   const [password, setPassword] = React.useState("");
-  const submitForm = (e) => {
+  const submitForm = (e: any) => {
     e.preventDefault();
     Router.push(`/game/${randomUUID()}`)
   };
@@ -53,7 +53,7 @@ function Home() {
             <button type="submit">Submit</button>
           </form>
           <div>
-            <h3>Cards Against Humanity will be better in a Discord Call!</h3>
+            <h3>Cards Against Humanity is better played in a Discord voice chat session!</h3>
           </div>
         </div>
       </Container>

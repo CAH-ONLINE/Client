@@ -13,12 +13,12 @@ export default (
   const key = "window-state";
   const name = `window-state-${windowName}`;
   const store = new Store({ name });
-  const defaultSize = {
+  const defaultSize: number | any = {
     width: options.width,
     height: options.height,
   };
   let state = {};
-  let win;
+  let win: any;
 
   const restore = () => store.get(key, defaultSize);
 
@@ -33,7 +33,7 @@ export default (
     };
   };
 
-  const windowWithinBounds = (windowState, bounds) => {
+  const windowWithinBounds = (windowState: any, bounds: any) => {
     return (
       windowState.x >= bounds.x &&
       windowState.y >= bounds.y &&
@@ -50,7 +50,7 @@ export default (
     });
   };
 
-  const ensureVisibleOnSomeDisplay = (windowState) => {
+  const ensureVisibleOnSomeDisplay = (windowState: any) => {
     const visible = screen.getAllDisplays().some((display) => {
       return windowWithinBounds(windowState, display.bounds);
     });

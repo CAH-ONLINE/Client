@@ -1,5 +1,5 @@
-import React from "react";
-import styles from '../../styles/Card.module.scss'
+import React from 'react';
+import styles from '@/styles/Card.module.scss'
 
 type Props = {
   content: string;

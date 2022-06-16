@@ -1,5 +1,5 @@
 import styles from "./SessionCard.module.scss";
-import type { SessionCard } from "../../utils/types";
+import type { SessionCard } from "@/utils/types";
 import Link from "next/link";
 
 export default function SessionCard({

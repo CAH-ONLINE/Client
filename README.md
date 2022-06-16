@@ -1,10 +1,10 @@
 # CAH Client
 
 ## Introduction
-This project is one of the other projects related to the Cards Against Humanity (CAH) game. This client is made in Electron, using NextJS thanks to Nextron. The client is a web application that you can download and run in Windows and Linux (Fuck the Mac Users). 
+This project is one of the other projects related to the Cards Against Humanity (CAH) game. The client is made in Electron with NextJS thanks to Nextron. The client is a web application that you can download and run in Windows and Linux (sadly, no current macOS support).
 
 ## Installation
-To install the client, you need to install the following dependencies:
+To install the client, you'll need to install the following dependencies:
 - Node v14+
 - Yarn (Opt.)
 
@@ -22,7 +22,8 @@ yarn dev
 ```
 
 ## Contributing
-Your Contributions are really appreciated. Feel free to fork the project and make a pull request. It can be comments, something that makes improvements, add something new. 
+
+Your contributions are really appreciated. Feel free to fork the project and make a pull request. It can be comments, something that makes improvements, add something new.
 
 ## Notable Credits
 
