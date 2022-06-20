@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.scss";
 import Store from "electron-store";
 import Router from "next/router";
 import Container from "../components/Layout/Container";
-("electron-store");
+import useSocket, { useSockets } from "../contexts/SocketIOContext";
 
 function Home() {
+  let { socket, nickname, setNickname } = useSockets();
+  const nicknameRef = useRef(null)
   const store = new Store();
-  const [nickname, setNickname] = React.useState("");
-  const [invite, setInvite] = React.useState("");
   const submitForm = (e) => {
     e.preventDefault();
+    const nickname = nicknameRef.current.value;
+    const payload = { nickname }
     store.set("nickname", nickname);
-    if (invite) {
-      // TODO: Check if invite code is valid; if not, show error and redirect to session
-    }
+    console.log(payload)
+    socket.emit("new-user", payload);
     Router.push("/sessions");
   };
   store.set;
@@ -32,23 +33,14 @@ function Home() {
             <div>
               <label>Nickname: </label>
               <input
-                value={nickname}
-                onChange={(e) => setNickname(e.currentTarget.value)}
+                ref={nicknameRef}
                 type="text"
                 name="nickname"
               />
             </div>
-            <div>
-              <label>Invite Code (Opt.): </label>
-              <input
-                value={invite}
-                onChange={(e) => setInvite(e.currentTarget.value)}
-                type="text"
-                name="invite"
-              />
-            </div>
             <button type="submit">Submit</button>
           </form>
+          <p>Socket ID: {socket.id}</p>
         </div>
       </Container>
     </React.Fragment>

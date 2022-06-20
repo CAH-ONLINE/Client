@@ -1,6 +1,7 @@
 import styles from "./SessionCard.module.scss";
 import type { SessionCard } from "../../utils/types";
 import Link from "next/link";
+import { useSockets } from "../../contexts/SocketIOContext";
 
 export default function SessionCard({
   decksID,
@@ -10,6 +11,13 @@ export default function SessionCard({
   playerLimit,
   status,
 }: SessionCard) {
+  const { socket } = useSockets();
+  const joinGame = () => {
+    socket.emit("join-game", {
+      roomID: id,
+      password: "",
+    });
+  };
   return (
     <div className={styles.sessionCard}>
       <div className={styles.cah}>
@@ -25,9 +33,7 @@ export default function SessionCard({
         <p>Status: {status}</p>
         <p>{nsfw ? "NOT SAFE FOR KIDS" : "SAFE FOR KIDS"}</p>
       </div>
-      <Link href="/game/2342">
-        <button>JOIN GAME</button>
-      </Link>
+      <button onClick={() => joinGame()}>JOIN GAME</button>
     </div>
   );
 }

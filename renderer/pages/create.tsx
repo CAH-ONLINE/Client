@@ -7,15 +7,25 @@ import Router from "next/router";
 import Container from "../components/Layout/Container";
 import Navbar from "../components/Navbar/Navbar";
 import { randomUUID } from "crypto";
+import { useSockets } from "../contexts/SocketIOContext";
 ("electron-store");
 
 function Home() {
   const store = new Store();
+  const { socket } = useSockets()
   const [status, setStatus] = React.useState<"Public" | "Private">("Public");
   const [password, setPassword] = React.useState("");
   const submitForm = (e) => {
     e.preventDefault();
-    Router.push(`/game/${randomUUID()}`)
+    const roomID = randomUUID()
+    const payload = {
+      roomID: roomID,
+      password: password,
+      access: status,
+      decks: [], // TODO: ADD DECKS
+    }
+    socket.emit("create-game", payload)
+    Router.push(`/game/${roomID}`)
   };
   return (
     <React.Fragment>
